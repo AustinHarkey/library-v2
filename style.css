@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700;800;900&family=Hind:wght@300;400;500;600;700&display=swap');
+
+
+/* Simple reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+    font-family: 'Hind', sans-serif;
+}
+
+h3 {
+    font-family: 'Alegreya', sans-serif;
+}
+
+body {
+    background-color: #F6F3FC;
+}
+
+.shelf {
+    padding: 100px 0;
+}
+
+.container {
+    max-width: 1400px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.shelf__wrapper {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.shelf__book {
+    width: 31%;
+    display: flex;
+    margin-bottom: 2%;
+    background-color: #fff;
+    /* border: 1px solid rgb(233, 233, 233); */
+    padding: 20px;
+    margin: 1%;
+    border-radius: 10px;
+    margin-bottom: calc(1% + 70px);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    position: relative;
+}
+
+.shelf__thumb {
+    width: 100%;
+    max-width: 140px;
+    align-self: center;
+    border-radius: 10px;
+    margin-top: -60px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.shelf__text {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding-left: 20px;
+}
+
+.shelf__buttons {
+    margin-top: 10px;
+    
+}
+
+.shelf__button {
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    width: 95px;
+    background-color: #fff;
+    border: 1px solid #FE3152;
+    color: #FE3152;
+
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+.shelf__button--read {
+    background-color: #FE3152;
+    color: #fff;
+}
+
+.shelf__button--read:after {
+    font-family: "Font Awesome 6 Free";
+    content: "\f14a";
+    pointer-events: none;
+    margin-left: 10px
+}
+
+.shelf__title {
+    font-size: 18px;
+    user-select: none;
+}
+
+.shelf__author {
+    font-size: 14px;
+    user-select: none;
+}
+
+.shelf__pages {
+    font-size: 14px;
+    color: rgb(158, 158, 158);
+    user-select: none;
+}
+
+.shelf__delete {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: rgb(124, 122, 122);
+}
+
+.shelf__delete:hover {
+    cursor: pointer;
+    color: #cc0202;
+}
+
+.shelf__header {
+    font-size: 60px;
+
+    text-transform: ;
+}
+
+.shelf__bar {
+    display: flex;
+    margin-bottom: 120px;
+    justify-content: space-between;
+}   
+
+.shelf__add {
+    align-self: center;
+    border: none;
+    outline: none;
+    padding: 12px 40px;
+    border-radius: 5px;
+    border: 1px solid #FE3152;
+    background-color: #fff;
+    color: #FE3152;
+    cursor: pointer;
+}
+
+.shelf__add:hover {
+    background-color: #FE3152;
+    color: #fff;
+}
+
+.shelf__add i {
+    padding-left: 5px;
+}
+
+.overlay {
+    background-color: rgba(0,0,0, .2);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s all ease;
+}
+
+.overlay--open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal__form {
+    background-color: #FE3152;
+    padding: 50px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Hind', sans-serif;
+    color: #fff;
+    z-index: 100;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s all ease;
+}
+
+.modal__form--open {
+    opacity: 1;
+    visibility:visible
+}
+
+.modal__fieldset {
+    border: none;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.modal__fieldset--check {
+    flex-direction: row;
+}
+
+.modal__fieldset--check .modal__label {
+    padding-right: 10px;
+}
+
+.modal__input {
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.modal__submit {
+    background-color: #FE3152;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 12px 60px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    font-family: 'Hind', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.modal__submit:hover {
+    background-color: #fff;
+    color: #FE3152
+}
+
+@media (max-width: 1300px) {
+    .shelf {
+        padding: 80px 0;
+    }
+    .shelf__book {
+        width: 48%;
+    }
+    .shelf__header {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 900px) {
+    .shelf {
+        padding: 40px 0;
+    }
+    .shelf__wrapper {
+        justify-content: center;
+    }
+    .shelf__book {
+        max-width: 500px;
+        width: 100%;
+    }
+    .shelf__header {
+        font-size: 34px;
+    }
+}
